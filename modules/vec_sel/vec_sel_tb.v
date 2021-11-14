@@ -67,7 +67,7 @@ begin
             err = err + 1;
         end
         @(posedge clk);
-        i = i == `NUM_P1 ? 0 : i + 1;
+        i = i == `NUM_M1 ? 0 : i + 1;
     end
 
 end

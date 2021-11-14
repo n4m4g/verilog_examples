@@ -2,7 +2,7 @@
 `define BIT   4
 `define SEL   4    // log2(WIDTH/BIT)
 `define NUM   `WIDTH/`BIT
-`define NUM_P1   `NUM-1
+`define NUM_M1   `NUM-1
 
 module vec_sel
 (
@@ -19,7 +19,7 @@ always@(posedge clk or negedge rst_n) begin
     if(~rst_n) begin
         sel <= {`SEL{1'b0}};
     end else if(en) begin
-        if(sel==`SEL'd`NUM_P1) begin
+        if(sel==`SEL'd`NUM_M1) begin
             sel <= {`SEL{1'b0}}; 
         end else begin
             sel <= sel + `SEL'b1;
